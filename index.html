@@ -1,10 +1,57 @@
-<script src="https://cdn.plot.ly/plotly-2.24.1.min.js" charset="utf-8"></script>
+<!DOCTYPE html>
+<html>
 
-<!--this div will be replaced in JS with the graph-->
-<div id="tester" style="width:800px;height:250px;"></div>
-<script>
-  // Moved to -->
-</script>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>replit</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+   <script src="https://cdn.plot.ly/plotly-2.32.0.min.js" charset="utf-8"></script>
+  <div id="tester" style="width:600px;height:400px;"></div>
+</head>
 
-<script src="webpage.js"></script>
-<link rel="stylesheet" href="webpage.css">
+<body>
+  <script src="script.js"></script>
+  <script>
+
+    TESTER = document.getElementById('tester');
+
+    var trace1 = {
+
+      x: ["blue(470)", "cyan(525)", "green(560)", "yellow(585)", "orange(600)", "red(645)", "deep red(700)", "IR1(735)", "IR2(810)", "IR3(880)", "IR4(940)"],
+
+      y: [26.55, 13.74, 15.41, 15.45, 16.49, 37.88, 61.39, 61.39,62.4, 90.15, 98.34, 101.97],
+
+      mode: 'markers',
+
+      type: 'scatter',
+
+      name: 'Team A',
+
+      text: ['A-1', 'A-2', 'A-3', 'A-4', 'A-5'],
+      mode: 'lines+markers',
+      marker: { size: 10}
+
+    };
+
+
+
+    var data = [trace1];
+    var layout = {
+      title: 'Reflection Percentage',
+      xaxis: {
+        title: 'Wavelength (nm)',
+      },
+      yaxis: {
+        title: 'Reflection %',
+      }
+    };
+
+
+
+    Plotly.newPlot('tester', data, layout);
+
+  </script>
+</body>
+
+</html>
